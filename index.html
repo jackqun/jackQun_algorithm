@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+</html>
+<script>
+  // 两数之后算法题目
+  var oneSum = function (nums, target) {
+    for (let i = 0; i < nums.length; i++) {
+      for (let j = i + 1; j < nums.length; j++) {
+        if (target - nums[i] === nums[j]) {
+          console.log(i,j)
+          return [i, j];
+        }
+      }
+    }
+    console.log("No two sum solution");
+  };
+  oneSum([2,7,8,14],22)
+
+  var twoSum = function(nums, target) { // map.has 表示是否存在指定元素，返回bool值  map.get 表示是否存在指定元素
+    var map = new Map();
+    for(let j=0; j < nums.length; j++){
+      map.set(nums[i], j);
+    }
+    for( let j =0; j < nums.length;j++){
+      let complement = target - nums[j];
+      if (map.has(complement) && map.get(complement) !== j) {
+        return [j, map.get(complement)];
+      }
+    }
+  }
+
+</script>
